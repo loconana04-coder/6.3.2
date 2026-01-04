@@ -1,0 +1,44 @@
+// Initial data
+const friend = "BRUTUS";
+const shiftValue = 3;
+
+// Step 1
+// Store the Latin alphabet in lowercase.
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+// Step 2
+// Find index of the first letter of Caesar's friend
+const firstLetter = friend[0]; 
+const index = alphabet.indexOf(firstLetter.toLowerCase()); 
+
+/* Question 1:
+  Answer: JavaScript uses zero-based indexing, which means the first item 
+  of a string is figured out using index 0. a = 0 and b = 1.
+*/
+
+// Step 3
+const newIndexStep3 = index + shiftValue;
+const encryptedFirstLetterStep3 = alphabet[newIndexStep3];
+
+/* Question 2: 
+  Answer: The (%) helps us wrap around. By taking the result 
+  of (index + shift) % alphabetLength, it makes sure that if the sum exceeds 25, 
+  it starts over at 0.
+*/
+
+// Step 4
+// Determine the length of the alphabet
+const alphabetLength = alphabet.length;
+
+// Step 5
+const newIndex = (index + shiftValue) % alphabetLength;
+const encryptedFirstLetter = alphabet[newIndex];
+
+// Step 6
+const encryptedMessage = "EUXWXV";
+const teaserMessage = encryptedMessage.slice(0, 3); 
+
+// Console Logs for Verification
+console.log("Original Index of B:", index);
+console.log("Encrypted First Letter:", encryptedFirstLetter);
+console.log("Teaser Message:", teaserMessage);
